@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Strarup & Company | Product Innovation Consultancy</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyBB_SVKlC9CcEjDt1H01_B7Gjmb8FiIaGw",
+      v: "weekly",
+  });
+</script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0f766e 0%, #0e7490 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-tab.active {
+            background-color: #f0fdfa;
+            border-left: 4px solid #0f766e;
+            color: #0f766e;
+        }
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background-color: #cbd5e1;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-dot {
+            background-color: #0f766e;
+            transform: scale(1.2);
+        }
+        .timeline-content {
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-content {
+            opacity: 1;
+        }
+        /* Custom Scrollbar */
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; }
+        .modal-enter-active { opacity: 1; transition: opacity 300ms ease-out; }
+        .modal-exit { opacity: 1; }
+        .modal-exit-active { opacity: 0; transition: opacity 200ms ease-in; }
+    </style>
+</head>
+<body class="bg-slate-50 overflow-x-hidden">
+    
+<nav class="fixed w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300" id="navbar">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-teal-700 text-3xl">science</span>
+<span class="font-bold text-xl tracking-tight text-slate-800">STRARUP & COMPANY</span>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-slate-600 hover:text-teal-700 font-medium transition-colors" href="#process">Our Process</a>
+<a class="text-slate-600 hover:text-teal-700 font-medium transition-colors" href="#services">Services</a>
+<a class="text-slate-600 hover:text-teal-700 font-medium transition-colors" href="#cases">Cases</a>
+<a class="text-slate-600 hover:text-teal-700 font-medium transition-colors" href="#founder">Founder</a>
+<a class="px-5 py-2 bg-teal-700 text-white rounded-full hover:bg-teal-800 transition-colors font-medium" href="#contact">Contact Us</a>
+</div>
+<div class="md:hidden">
+<button class="text-slate-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+<header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Lab Background" class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+<div class="absolute inset-0 bg-gradient-to-b from-slate-50/80 to-slate-50"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+                Bridging the Gap Between <br>
+<span class="gradient-text">Concept & Shelf</span>
+</h1>
+<p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                We don't just consult. We operate as your outsourced product innovation R&D department, applying 25+ years of experience innovating food, beverages, and nutraceuticals products.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="px-8 py-4 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-shadow shadow-lg shadow-teal-700/20 font-semibold text-lg flex items-center justify-center" href="#process">
+                    View Our Process
+                    <span class="material-symbols-outlined ml-2">arrow_downward</span>
+</a>
+<a class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors font-semibold text-lg flex items-center justify-center" href="#services">
+                    Our Services
+                </a>
+</div>
+</div>
+</header>
+
+<section class="py-24 bg-white" id="process">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 mb-2">Strarup & Company</h2>
+            <p class="text-xl text-teal-700 font-medium">Innovation Process</p>
+        </div>
+
+        <div class="relative">
+            <div class="hidden md:block absolute top-[28px] left-0 w-full h-1 bg-gradient-to-r from-slate-200 via-teal-100 to-slate-200 rounded-full -z-0"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="relative group">
+                    <div class="flex justify-center mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-white border-4 border-teal-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-teal-700 font-bold">lightbulb</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+                        <div class="text-center mb-4">
+                            <span class="text-teal-600 font-bold tracking-widest text-xs uppercase mb-1 block">Phase 1</span>
+                            <h3 class="text-xl font-bold text-slate-900">Product Strategy</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Idea Catalogues & Trendspotting
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Concept Development & Reports
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Competitor Analysis
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Business Case
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="flex justify-center mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-teal-700 border-4 border-white ring-4 ring-teal-50 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-white font-bold">science</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+                        <div class="text-center mb-4">
+                            <span class="text-teal-600 font-bold tracking-widest text-xs uppercase mb-1 block">Phase 2</span>
+                            <h3 class="text-xl font-bold text-slate-900">Product Development</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Formulation Guidance
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Taste Development Management
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Sourcing of Ingredients
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="flex justify-center mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-white border-4 border-teal-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-teal-900 font-bold">rocket_launch</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+                        <div class="text-center mb-4">
+                            <span class="text-teal-600 font-bold tracking-widest text-xs uppercase mb-1 block">Phase 3</span>
+                            <h3 class="text-xl font-bold text-slate-900">Finetuning</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Marketing Content
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check_circle</span>
+                                Marketing Launch Package
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-slate-50" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-12">
+<h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Comprehensive Service Architecture</h2>
+<p class="text-slate-600">From the first spark of an idea to the final product specification, we handle every step.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="lg:w-1/3 flex flex-col space-y-2">
+<button class="service-tab active w-full text-left p-5 rounded-lg hover:bg-slate-100 transition-all duration-200 flex items-center group" id="tab-innovation" onclick="switchTab('innovation')">
+<span class="material-symbols-outlined text-2xl mr-4 group-hover:scale-110 transition-transform">lightbulb</span>
+<div>
+<h4 class="font-bold text-lg">Strategic Innovation</h4>
+<p class="text-sm text-slate-500 mt-1">Trend spotting & concepts</p>
+</div>
+</button>
+<button class="service-tab w-full text-left p-5 rounded-lg hover:bg-slate-100 transition-all duration-200 flex items-center group" id="tab-rnd" onclick="switchTab('rnd')">
+<span class="material-symbols-outlined text-2xl mr-4 group-hover:scale-110 transition-transform">science</span>
+<div>
+<h4 class="font-bold text-lg">Product Innovation R&D</h4>
+<p class="text-sm text-slate-500 mt-1">Formulation & prototyping</p>
+</div>
+</button>
+<button class="service-tab w-full text-left p-5 rounded-lg hover:bg-slate-100 transition-all duration-200 flex items-center group" id="tab-sourcing" onclick="switchTab('sourcing')">
+<span class="material-symbols-outlined text-2xl mr-4 group-hover:scale-110 transition-transform">public</span>
+<div>
+<h4 class="font-bold text-lg">Global Ingredient Sourcing</h4>
+<p class="text-sm text-slate-500 mt-1">Procurement network</p>
+</div>
+</button>
+<button class="service-tab w-full text-left p-5 rounded-lg hover:bg-slate-100 transition-all duration-200 flex items-center group" id="tab-regulatory" onclick="switchTab('regulatory')">
+<span class="material-symbols-outlined text-2xl mr-4 group-hover:scale-110 transition-transform">gavel</span>
+<div>
+<h4 class="font-bold text-lg">Product Management</h4>
+<p class="text-sm text-slate-500 mt-1">Product lifecycle management</p>
+</div>
+</button>
+</div>
+<div class="lg:w-2/3 bg-white rounded-2xl p-8 shadow-sm border border-slate-100 min-h-[500px] relative overflow-hidden">
+<div class="tab-content transition-opacity duration-500 opacity-100 absolute inset-0 p-8 overflow-y-auto custom-scroll" id="content-innovation">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 mb-2">Strategic Innovation (Front-End)</h3>
+<p class="text-slate-600">Validating the business case before a single gram is formulated.</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-teal-100">lightbulb</span>
+</div>
+<img alt="Innovation" class="w-full h-48 object-cover rounded-lg mb-6" src="https://i.imgur.com/DWbVXHP.jpeg">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="bg-slate-50 p-4 rounded-lg">
+<h5 class="font-bold text-teal-700 mb-2">Trend Spotting</h5>
+<p class="text-sm text-slate-600">Identifying macro-trends or functional needs, adjusting them to your products.</p>
+</div>
+<div class="bg-slate-50 p-4 rounded-lg">
+<h5 class="font-bold text-teal-700 mb-2">Concept Reports</h5>
+<p class="text-sm text-slate-600">Complete deliverables including price estimates, competitor analysis, and scientific backing for proposed products.</p>
+</div>
+<div class="bg-slate-50 p-4 rounded-lg md:col-span-2">
+<h5 class="font-bold text-teal-700 mb-2">Idea Catalogs</h5>
+<p class="text-sm text-slate-600">Generating concrete product concepts for clients to choose from, accelerating the decision-making process.</p>
+</div>
+</div>
+</div>
+<div class="tab-content transition-opacity duration-500 opacity-0 pointer-events-none absolute inset-0 p-8 overflow-y-auto custom-scroll" id="content-rnd">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 mb-2">Product Innovation R&D & Formulation</h3>
+<p class="text-slate-600">The "lab work" – chemistry, flavor science, and delivery systems.</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-teal-100">science</span>
+</div>
+<img alt="R&D" class="w-full h-48 object-cover rounded-lg mb-6" src="https://i.imgur.com/nF22zZ8.jpeg">
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-teal-600">pill</span>
+</div>
+<div>
+<h5 class="font-bold text-slate-900">Diverse Delivery Systems</h5>
+<p class="text-sm text-slate-600">We don't just do pills. We develop gummies (soft-gums), chewing gum, functional beverages, and snack bars.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-teal-600">palette</span>
+</div>
+<div>
+<h5 class="font-bold text-slate-900">Advanced Flavor Delivery</h5>
+<p class="text-sm text-slate-600">New methods for encapsulation and "Food Pairing" science.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-teal-600">experiment</span>
+</div>
+<div>
+<h5 class="font-bold text-slate-900">Prototyping</h5>
+<p class="text-sm text-slate-600">Creation of physical samples for rigorous taste testing and sensory evaluation (mouthfeel, scent, texture).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content transition-opacity duration-500 opacity-0 pointer-events-none absolute inset-0 p-8 overflow-y-auto custom-scroll" id="content-sourcing">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 mb-2">Global Ingredient Sourcing</h3>
+<p class="text-slate-600">Procurement arm leveraging a network across India, South- and Central America, and Europe.</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-teal-100">public</span>
+</div>
+<img alt="Global Sourcing" class="w-full h-48 object-cover rounded-lg mb-6" src="https://i.imgur.com/Z5ooc8W.jpeg">
+<div class="grid md:grid-cols-2 gap-4">
+<div class="p-4 border border-slate-200 rounded-lg hover:border-teal-500 transition-colors">
+<h5 class="font-bold text-slate-900">Hard-to-Find Ingredients</h5>
+<p class="text-sm text-slate-600 mt-1">Locating niche ingredients that standard suppliers may not offer.</p>
+</div>
+<div class="p-4 border border-slate-200 rounded-lg hover:border-teal-500 transition-colors">
+<h5 class="font-bold text-slate-900">Price Negotiation</h5>
+<p class="text-sm text-slate-600 mt-1">Balancing Cost-of-Goods (COGS) with strict quality assurance.</p>
+</div>
+<div class="p-4 border border-slate-200 rounded-lg hover:border-teal-500 transition-colors md:col-span-2">
+<h5 class="font-bold text-slate-900">Cost Effective Ingredients</h5>
+<p class="text-sm text-slate-600 mt-1">We also assist in finding direct alternative ingredients from 3rd countries, which meet specifications but are cheaper in price.</p>
+</div>
+</div>
+</div>
+<div class="tab-content transition-opacity duration-500 opacity-0 pointer-events-none absolute inset-0 p-8 overflow-y-auto custom-scroll" id="content-regulatory">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 mb-2">Product Management and Strategy</h3>
+<p class="text-slate-600">Product lifecycle management</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-teal-100">verified_user</span>
+</div>
+<img alt="Regulatory" class="w-full h-48 object-cover rounded-lg mb-6" src="https://i.imgur.com/g5XG6fz.png&aspect=16:9">
+<ul class="space-y-4">
+<li class="flex items-center p-3 bg-teal-50 rounded-md">
+<span class="material-symbols-outlined text-teal-700 mr-3">campaign</span>
+<span class="text-slate-700 font-medium">Product Portfolio</span>
+</li>
+<li class="flex items-center p-3 bg-teal-50 rounded-md">
+<span class="material-symbols-outlined text-teal-700 mr-3">label</span>
+<span class="text-slate-700 font-medium">Product Planning</span>
+</li>
+<li class="flex items-center p-3 bg-teal-50 rounded-md">
+<span class="material-symbols-outlined text-teal-700 mr-3">workspace_premium</span>
+<span class="text-slate-700 font-medium">Product Marketing</span>
+</li>
+<li class="flex items-center p-3 bg-teal-50 rounded-md">
+<span class="material-symbols-outlined text-teal-700 mr-3">insights</span>
+<span class="text-slate-700 font-medium">Competitive Strategy</span>
+</li>
+<li class="flex items-center p-3 bg-teal-50 rounded-md">
+<span class="material-symbols-outlined text-teal-700 mr-3">diamond</span>
+<span class="text-slate-700 font-medium">Value Proposition Strategy</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 bg-white" id="sourcing">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    
+    <div class="mt-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900">Core Expertise Categories</h2>
+        <p class="text-slate-600 mt-2">Specializing in food, beverages, health and nutrition. Click to learn more.</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+        
+        <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openCategoryModal('nutraceuticals')">
+          <img alt="Supplements" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://i.imgur.com/K6PILq0.png&aspect=3:4">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-4">
+            <span class="material-symbols-outlined text-teal-400 mb-1">medication</span>
+            <h4 class="text-white font-bold">Nutraceuticals</h4>
+            <p class="text-white/80 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Plant extracts, and pre/probiotics</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openCategoryModal('beverages')">
+          <img alt="Beverages" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://i.imgur.com/3EJPLWx.jpeg&aspect=3:4">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-4">
+            <span class="material-symbols-outlined text-teal-400 mb-1">local_drink</span>
+            <h4 class="text-white font-bold">Innovative Beverages</h4>
+            <p class="text-white/80 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Sodas, tonics, and soft drinks</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openCategoryModal('bars')">
+          <img alt="Sports Nutrition" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://i.imgur.com/EFnF2rb.jpeg&aspect=3:4">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-4">
+            <span class="material-symbols-outlined text-teal-400 mb-1">fitness_center</span>
+            <h4 class="text-white font-bold">Nutritional Bars</h4>
+            <p class="text-white/80 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Protein- and fruit- and nut bars</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openCategoryModal('confectionary')">
+          <img alt="Confectionery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://i.imgur.com/zLnGqa8.png&aspect=3:4">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-4">
+            <span class="material-symbols-outlined text-teal-400 mb-1">cookie</span>
+            <h4 class="text-white font-bold">Confectionary</h4>
+            <p class="text-white/80 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Functional gums, healthy candy</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openCategoryModal('skincare')">
+            <img alt="Skin Care" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://i.imgur.com/QGBXWHb.png&aspect=3:4">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-4">
+              <span class="material-symbols-outlined text-teal-400 mb-1">spa</span>
+              <h4 class="text-white font-bold">Skin Care</h4>
+              <p class="text-white/80 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Beauty ingredients, creams</p>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-slate-50" id="cases">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 mb-2">Selected Cases</h2>
+            <p class="text-xl text-slate-600">Helping partners across the food & nutraceuticals spectrum</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/qPIxFth.png" alt="Royal Unibrew Logo" class="h-full w-full object-contain p-4">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">ROYAL UNIBREW</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Soft drinks & cocktails</p>
+                </div>
+                <div class="mt-auto">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Entire liquid development process from marketing brief to final taste approved beverage.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/d5pM21Q.png" alt="Biosyntia Logo" class="h-full w-full object-contain p-4">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">BIOSYNTIA</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Biotin for Nutraceuticals</p>
+                </div>
+                <ul class="space-y-2 mt-auto">
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Product Strategy
+                    </li>
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Idea Catalogue & R&D Plan
+                    </li>
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Application notes - Samples
+                    </li>
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Marketing Package
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/BviiIwJ.png" alt="Coffeebird Logo" class="h-full w-full object-contain p-3">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">COFFEEBIRD</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Fruit, Nut & Seed Bars</p>
+                </div>
+                <div class="mt-auto">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Product Management over the entire process from Idea to the Shelves.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/90B7Jrk.png" alt="Jemopharm Logo" class="h-full w-full object-contain p-3">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">JEMOPHARM</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Dietary supplements (tablets)</p>
+                </div>
+                <ul class="space-y-2 mt-auto">
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Idea catalogues
+                    </li>
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Scientific Rationales
+                    </li>
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Product Development
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/NRZW8fB.png" alt="Food & Biocluster Logo" class="h-full w-full object-contain p-3">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">FOOD & BIOCLUSTER</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Insect proteins for Human Food</p>
+                </div>
+                <div class="mt-auto">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Market analysis report including state-of-art, R&D ideas and perspectives.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/cTbPk1A.jpeg" alt="From Another Mother Logo" class="h-full w-full object-contain p-2">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">FROM ANOTHER MOTHER</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Baby Food</p>
+                </div>
+                <ul class="space-y-2 mt-auto">
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Formulation Guidance
+                    </li>
+                    <li class="flex items-start text-sm text-slate-600">
+                        <span class="material-symbols-outlined text-teal-500 mr-2 text-[18px]">check</span> Sourcing of Ingredients
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 p-6 flex flex-col h-full transition-shadow md:col-span-2 lg:col-span-1">
+                <div class="h-20 bg-slate-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="https://i.imgur.com/rrn7YQv.png" alt="Recens Logo" class="h-full w-full object-contain p-4">
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-slate-900">RECENS</h3>
+                    <p class="text-teal-700 font-medium text-sm uppercase tracking-wide mt-1">Gut Health (Sticks)</p>
+                </div>
+                <div class="mt-auto">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Entire process from idea until final concept to be fine-tuned for optimal flavor.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-white" id="founder">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row gap-12 items-start">
+      <div class="md:w-1/3 bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-100 sticky top-24">
+        <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-6 bg-slate-200">
+          <img alt="Annette Strarup" class="w-full h-full object-cover" src="https://i.imgur.com/FM42tEb.jpeg">
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900">Annette Strarup</h3>
+        <p class="text-teal-700 font-medium mb-4">Founder & Chemical Engineer (DTU)</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+          A career built on bridging the gap between hard science and market success with 25+ years of experience.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs rounded-full">Chemical Engineering</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs rounded-full">Biotechnology</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs rounded-full">Food Science</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs rounded-full">Nutrition Science</span>
+          <span class="px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs rounded-full">Product Strategy</span>
+        </div>
+      </div>
+
+      <div class="md:w-2/3">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Founder's CV</h2>
+        <div class="relative border-l-2 border-slate-200 ml-4 space-y-12 pb-4">
+          
+          <div class="timeline-item relative pl-8">
+            <div class="absolute -left-[9px] top-1 timeline-dot"></div>
+            <div>
+              <span class="text-teal-700 font-bold text-sm">2019 – Present</span>
+              <h4 class="text-xl font-bold text-slate-900">Founder, Strarup & Company</h4>
+              <p class="text-slate-600 mt-2 timeline-content"></p>
+            </div>
+          </div>
+
+          <div class="timeline-item relative pl-8">
+            <div class="absolute -left-[9px] top-1 timeline-dot"></div>
+            <div>
+              <span class="text-teal-700 font-bold text-sm">2006 – 2019</span>
+              <h4 class="text-xl font-bold text-slate-900">Sales Development Management (Alsiano)</h4>
+              <p class="text-slate-600 mt-2 timeline-content">Mastering the commercial side of ingredients and B2B sales.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item relative pl-8">
+            <div class="absolute -left-[9px] top-1 timeline-dot"></div>
+            <div>
+              <span class="text-teal-700 font-bold text-sm">2003 – 2005</span>
+              <h4 class="text-xl font-bold text-slate-900">Product Development Manager, Nutraceuticals (Pfizer)</h4>
+              <p class="text-slate-600 mt-2 timeline-content">Managing complex corporate projects and clinical trial structures.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item relative pl-8">
+            <div class="absolute -left-[9px] top-1 timeline-dot"></div>
+            <div>
+              <span class="text-teal-700 font-bold text-sm">2002 – 2003</span>
+              <h4 class="text-xl font-bold text-slate-900">Pharmaceutical Formulation Scientist (Leo Pharma)</h4>
+              <p class="text-slate-600 mt-2 timeline-content">Development of psoriasis topical formulations.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item relative pl-8">
+            <div class="absolute -left-[9px] top-1 timeline-dot"></div>
+            <div>
+              <span class="text-teal-700 font-bold text-sm">1994 – 2002</span>
+              <h4 class="text-xl font-bold text-slate-900">Ingredient Discovery & R&D (CP Kelco)</h4>
+              <p class="text-slate-600 mt-2 timeline-content">Ingredient discovery and development.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="bg-slate-900 text-white py-16" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<div class="flex items-center space-x-2 mb-6">
+<span class="material-symbols-outlined text-teal-500 text-3xl">science</span>
+<span class="font-bold text-xl tracking-tight">STRARUP & CO.</span>
+</div>
+<p class="text-slate-400 mb-8 max-w-sm">
+                        Let's discuss your innovation pipeline.
+                    </p>
+<div class="space-y-4">
+  <div class="flex items-center text-slate-300">
+    <span class="material-symbols-outlined mr-3 text-teal-500">location_on</span>
+    Hillerød, Denmark
+  </div>
+  <div class="flex items-center text-slate-300">
+    <span class="material-symbols-outlined mr-3 text-teal-500">mail</span>
+    ast@strarupcompany.com
+  </div>
+  <div class="flex items-center text-slate-300">
+    <span class="material-symbols-outlined mr-3 text-teal-500">call</span>
+    +45 53 58 68 30
+  </div>
+  <div class="flex items-center text-slate-300">
+    <span class="material-symbols-outlined mr-3 text-teal-500">badge</span>
+    CVR: 40719008
+  </div>
+</div>
+</div>
+<div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+<h4 class="text-xl font-bold mb-4">Start Your Project</h4>
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for your interest.');">
+<div class="grid grid-cols-2 gap-4">
+<input class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500" placeholder="Name" type="text">
+<input class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500" placeholder="Company" type="text">
+</div>
+<input class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500" placeholder="Email Address" type="email">
+<textarea class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500" placeholder="Briefly describe your project..." rows="3"></textarea>
+<button class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-lg transition-colors" type="submit">
+                            Request Consultation
+                        </button>
+</form>
+</div>
+</div>
+<div class="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-sm">
+                © 2026 Strarup & Company. All rights reserved.
+            </div>
+</div>
+</footer>
+
+<button class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-4 rounded-full shadow-2xl hover:bg-teal-700 transition-all duration-300 flex items-center gap-3 group border border-slate-700" id="exportBtn" onclick="downloadSource()">
+<span class="material-symbols-outlined">download</span>
+<span class="font-medium">Export Code</span>
+</button>
+
+<div id="categoryModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop" onclick="closeModal()"></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl opacity-0 scale-95" id="modalPanel">
+                <div class="absolute right-4 top-4">
+                    <button type="button" class="rounded-full bg-slate-100 p-2 text-slate-400 hover:text-teal-700 hover:bg-teal-50 transition-colors focus:outline-none" onclick="closeModal()">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="px-8 py-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-3xl text-teal-600" id="modalIcon"></span>
+                        <h3 class="text-2xl font-bold text-slate-900 font-playfair" id="modalTitle"></h3>
+                    </div>
+                    <div class="mt-2">
+                        <div class="text-slate-600 space-y-4 leading-relaxed text-sm md:text-base" id="modalText">
+                            </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 flex justify-end">
+                     <button type="button" class="inline-flex justify-center rounded-lg bg-teal-700 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 transition-all" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+        // Tab Functionality
+        function switchTab(tabId) {
+            // Reset all tabs
+            document.querySelectorAll('.service-tab').forEach(tab => {
+                tab.classList.remove('active', 'bg-teal-50', 'text-teal-700', 'border-l-4', 'border-teal-600');
+                // Reset icons size
+                const icon = tab.querySelector('.material-symbols-outlined');
+                if(icon) icon.classList.remove('text-teal-700');
+            });
+            
+            // Activate clicked tab
+            const activeTab = document.getElementById(`tab-${tabId}`);
+            activeTab.classList.add('active');
+            
+            // Hide all content with fade out
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('opacity-100', 'pointer-events-auto');
+                content.classList.add('opacity-0', 'pointer-events-none');
+            });
+            
+            // Show selected content with fade in
+            const activeContent = document.getElementById(`content-${tabId}`);
+            activeContent.classList.remove('opacity-0', 'pointer-events-none');
+            activeContent.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        // --- Category Modal Logic ---
+        const categoryData = {
+            nutraceuticals: {
+                title: "Nutraceuticals",
+                icon: "medication",
+                text: `
+                    <p>The nutraceutical category is growing fast and the research into the effect of new ingredients on many health areas is massive.</p>
+                    <p>Today the nutraceuticals are not just capsules and tablets, but also gums, liquid supplements and sticks.</p>
+                    <p>We have helped many nutraceutical customers with product development, scientific rationales, clinical studies, ideas and development in health areas such as Women's health, Sports Nutrition, Weight Control, Beauty From Within, Gut Health, Mobility, Bone Health and Cognitive Health.</p>
+                `
+            },
+            beverages: {
+                title: "Innovative Beverages",
+                icon: "local_drink",
+                text: `
+                    <p>The curiosity regarding new flavors is huge among consumers, especially Gen Z and Millennials.</p>
+                    <p>Also the functional beverage category and healthier soda have taken a bigger position in the market.</p>
+                    <p>We are experts and have helped clients in the beverage market to develop and launch new products within Sodas, Tonics, Sparkling tea, Chai Latte, Pre-mixed cocktails and Mixers. The functional soda market is a new category and growing very fast and here we have been involved in several projects.</p>
+                `
+            },
+            bars: {
+                title: "Nutritional Bars",
+                icon: "fitness_center",
+                text: `
+                    <p>The demand for healthy nutrition rises and the nutrition claims and benefits are more important than ever, with focus on clean label and bioavailability solutions.</p>
+                    <p>We are nutrition experts in the healthy food area, and have great experience with helping customers to generate ideas, develop concepts and launch products within protein bars, cereal bars, energy bars and fruit & nuts bars with benefits.</p>
+                    <p>We develop and product design based on the newest trends and hypes in this category to improve or extend your product portfolio. We have also been involved in other Family Health Products, such as Baby Food, Fruit Snack, Fruit Tea and Breakfast cereals.</p>
+                `
+            },
+            confectionary: {
+                title: "Confectionary",
+                icon: "cookie",
+                text: `
+                    <p>The focus in this category being pastils, chewing gum and chocolate covered confectionary is 'Better-For-You', to balance indulgence with health-conscious ingredients.</p>
+                    <p>We perform idea catalogues, concept development and project management into these areas:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Reduced sugar, more real fruit, clean label and functional benefits such as protein, fiber plant extracts and bioactive.</li>
+                        <li>New ideas including plant-based, vegan and sustainability such as up-cycled ingredients.</li>
+                    </ul>
+                `
+            },
+            skincare: {
+                title: "Skin Care",
+                icon: "spa",
+                text: `
+                    <p>The customers are seeking products with scientific documentation and backed by in-vitro and human clinical studies. Not only in the beauty-from-within capsules but also in the skin cream area. We are experts into seeking newly launched beauty ingredients with excellent human placebo-controlled clinical documentation.</p>
+                    <p>We not only help marketing companies with development and sourcing new branded ingredients for problematic skin with documentation. We also help beauty ingredient companies with strategy, research, development, project management and ideas for new applications within problematic skin.</p>
+                `
+            }
+        };
+
+        function openCategoryModal(categoryKey) {
+            const data = categoryData[categoryKey];
+            if (!data) return;
+
+            // Populate Modal
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalIcon').textContent = data.icon;
+            document.getElementById('modalText').innerHTML = data.text;
+
+            // Show Modal
+            const modal = document.getElementById('categoryModal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const panel = document.getElementById('modalPanel');
+
+            modal.classList.remove('hidden');
+            
+            // Animation Timeout
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'scale-95');
+                panel.classList.add('opacity-100', 'scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('categoryModal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const panel = document.getElementById('modalPanel');
+
+            // Start Exit Animation
+            backdrop.classList.add('opacity-0');
+            panel.classList.remove('opacity-100', 'scale-100');
+            panel.classList.add('opacity-0', 'scale-95');
+
+            // Wait for transition to finish then hide
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+
+        // Initialize Map
+        async function initMap() {
+            const { Map, InfoWindow } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+
+            const map = new Map(document.getElementById("map"), {
+                center: { lat: 20.0, lng: 10.0 }, // Centered between regions
+                zoom: 2,
+                mapId: 'STRARUP_SOURCING_MAP',
+                disableDefaultUI: true,
+                gestureHandling: 'cooperative',
+                styles: [
+                    { "featureType": "water", "stylers": [{ "color": "#e9e9e9" }] },
+                    { "featureType": "landscape", "stylers": [{ "color": "#f5f5f5" }] }
+                ]
+            });
+
+            // Locations based on text: India, South America, South Africa, Europe
+            const locations = [
+                {
+                    position: { lat: 55.6761, lng: 12.5683 },
+                    title: "HQ & Europe Hub",
+                    desc: "Copenhagen, Denmark. Regulatory compliance center and European sourcing.",
+                    type: "HQ"
+                },
+                {
+                    position: { lat: 20.5937, lng: 78.9629 },
+                    title: "India Sourcing",
+                    desc: "Botanical extracts and spices. High-quality raw material procurement.",
+                    type: "Source"
+                },
+                {
+                    position: { lat: -14.2350, lng: -51.9253 },
+                    title: "South America Sourcing",
+                    desc: "Exotic fruits, superfoods, and natural flavor ingredients.",
+                    type: "Source"
+                },
+                {
+                    position: { lat: -30.5595, lng: 22.9375 },
+                    title: "South Africa Sourcing",
+                    desc: "Specialized botanicals and unique regional ingredients.",
+                    type: "Source"
+                },
+            ];
+
+            const infoWindow = new InfoWindow();
+
+            locations.forEach(loc => {
+                // Create pin
+                const glyph = document.createElement("span");
+                glyph.className = "material-symbols-outlined text-white text-[16px]";
+                glyph.textContent = loc.type === "HQ" ? "star" : "eco";
+                
+                const pin = new PinElement({
+                    glyph: glyph,
+                    background: loc.type === "HQ" ? "#0f766e" : "#0d9488",
+                    borderColor: "#fff",
+                    scale: 1.2
+                });
+
+                const marker = new AdvancedMarkerElement({
+                    map: map,
+                    position: loc.position,
+                    content: pin.element,
+                    title: loc.title
+                });
+
+                // Add click listener
+                marker.addListener("click", () => {
+                    // Create Header
+                    const header = document.createElement("div");
+                    header.className = "px-1 py-1";
+                    header.innerHTML = `<h3 class="font-bold text-teal-800 text-lg">${loc.title}</h3>`;
+                    
+                    // Create Content
+                    const content = document.createElement("div");
+                    content.className = "px-1 pb-1 max-w-[200px]";
+                    content.innerHTML = `<p class="text-slate-600 text-sm">${loc.desc}</p>`;
+
+                    infoWindow.setHeaderContent(header);
+                    infoWindow.setContent(content);
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+
+        // Initialize Map on Load
+        document.addEventListener('DOMContentLoaded', () => {
+             initMap();
+        });
+
+        // Export Functionality
+        function downloadSource() {
+            // Get the current HTML
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            
+            // Create a blob
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create a temporary link to trigger download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'strarup-company.html';
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Visual feedback
+            const btn = document.getElementById('exportBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined">check</span><span class="font-medium">Downloaded!</span>';
+            btn.classList.add('bg-teal-600');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-teal-600');
+            }, 2000);
+        }
+
+    </script>
+</body>
+</html>
